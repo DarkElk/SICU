@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+        background: url(../img/cloud2.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+}
+
+div.Contenedor{
+    margin: auto;
+    margin-top: 50px;
+    width: 1060px;
+    height: 900px;
+    background-color: white;
+}
+
+div.Buscador{
+    margin: auto;
+    /*position: relative;*/
+    width: 0%;
+    padding: 30px;
+    text-align: center;
+}
