@@ -15,3 +15,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Usuarios_registrados(models.Model):
+    nombre =            models.CharField(max_length=100)
+    correo =            models.CharField(max_length=100)
+    contraseña =        models.CharField(max_length=100)
+    carrera =           models.CharField(max_length=100)
+    fecha_creacion =    models.DateTimeField(default = timezone.now)
+
+    def __str__(self):
+        return self.nombre
