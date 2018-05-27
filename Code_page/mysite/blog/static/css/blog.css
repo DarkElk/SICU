@@ -1,14 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 h1 a {
        color: #FCA205;
        font-family: 'Lobster';
+       margin-left: 15px;
+       margin-right: 15px;
    }
 
 body {
        padding-left: 15px;
-   }
+       background-color: #FFB6C1;
+}
 
 .page-header {
-   background-color: #ff9400;
+   background-color: #8A2BE2;
    margin-top: 0;
    padding: 20px 20px 20px 40px;
 }
@@ -19,7 +27,7 @@ body {
    text-decoration: none;
 }
 
-.content {
+.content { /*Contenido completo de la Pagina*/
    margin-left: 40px;
 }
 
@@ -27,13 +35,14 @@ h1, h2, h3, h4 {
    font-family: 'Lobster', cursive;
 }
 
-.date {
+.date { /*Fecha Post*/
    float: right;
    color: #828282;
 }
 
-.save {
+.save {  /*Ni idea que hace*/
    float: right;
+   font-size: 100px;
 }
 
 .post-form textarea, .post-form input {
@@ -44,7 +53,7 @@ h1, h2, h3, h4 {
    color: #ffffff;
    float: right;
    font-size: 26pt;
-   margin-right: 20px;
+   margin-right: 200px;
 }
 
 .post {
