@@ -1,102 +1,16 @@
-<!doctype html>
+{% extends 'blog/base.html' %}
+ {% block content %}
+  <h1>Posts</h1>
+  {% for post in posts %}
+      <div class="post">
 
-<!--{% load staticfiles %}-->
-
-<html>
-    <head>
-        <!--<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">-->
-        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
-        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
-        <link rel="stylesheet" href="../../static/css/Estilo_inicio.css">
-        <!--<link rel="stylesheet" href="{% static 'css/blog.css' %}">-->
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><!--Ajuste de tamaño-->
-
-        <title>SICU</title>
-        <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
-
-    </head>
-    <body>
-
-        <!--Barra de navegacion (NavBar)-->
-        <nav class="navbar navbar-lg navbar-dark" style="background-color: #fea7ff;">
-            <a class="navbar-brand" href="#">SICU</a><!--Link enlazado al logo-->
-
-            <!--Barra de busqueda-->
-            <form class="form-inline" method="POST" action="#"> {% csrf_token %}<!--acionando el boton-->
-                <input class="form-control mr-sm-2" name="entrada" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-
-            <!--Botones de Barra navegacion-->
-            <div class="btn-group" role="group"><!--arialabel-->
-                <button type="button" class="btn btn-primary">Inicio Sesión</button>
-                <button type="button" class="btn btn-secondary">Registrarse</button>
-            </div>
-
-        </nav>
-
-        <div class="container-perfil">
-            <div class="boton-perfil"><!--Boton perfil-->
-                <button type="button" class="btn btn-primary">Perfil</button>
-            </div>
-        </div>
+          <div class="date">
+              {{ post.fecha_creacion }}
+          </div>
+          <h1>{{ post.titulo }}</h1>
+          <p><a href="">{{ post.link|linebreaksbr }}</a></p>
 
 
-        <!--Post-->
-        <div class="parent-container"><!--Contenedor Principal-->
-
-            <div class="row justify-content-center"><!--Columnas-->
-
-                <div class="row justify-content-start">
-                    <div class="tags">
-                        <div class="col-11" style="background-color: #89acc7">
-                            <h2>Container Izquierdo</h1>
-                            <h3>Tags:</h3>
-
-                            <h4>#Tag1</h4>
-                            <h4>#Tag2</h4>
-                            <h4>#Tag3</h4>
-                            <h4>#Tag4</h4>
-                            <h4>#Tag5</h4>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-6" style="background-color: #c4ac8e">
-                    <h1>Posts</h1>
-                    {% for post in posts %}
-                        <div class="post">
-                            
-                            <div class="date">
-                                {{ post.fecha_creacion }}
-                            </div>
-                            <h1>{{ post.titulo }}</h1>
-                            <p><a href="">{{ post.link|linebreaksbr }}</a></p>
-
-                            
-                        </div>
-                    {% endfor %}
-                </div>
-
-                <div class="row justify-content-end">
-                    <div class="col-11" style="background-color: #c4e3e0">
-                        <h2>Container derecho</h2>
-                        <h3>Publicidad</h3>
-
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-
-        <script src="../../static/js/jquery-3.1.1.min.js"></script>
-        <script src="../../static/js/popper.min.js"></script>
-        <script src="../../static/js/bootstrap.min.js"></script>
-
-    </body>
-</html>
+      </div>
+  {% endfor %}
+{% endblock %}
