@@ -11,17 +11,18 @@
 
 }
 
-.parent-container { /*Container Pincipal */
+.my-container{ /*Container Pincipal */
    padding-top: 50px;
    padding-left: 100px;
    padding-right: 100px;
    padding-bottom: 50px;
    height: 100%;
-   background-color: #78f2b2;
+   background-color: #d7f1ff;
 }
 
-.tags{    /*Estilo seccion de tags*/
-    padding-top: 150px;
+.my-row{
+    border: 3px solid red;
+    height: 1300px;
 }
 
 h2{text-align: center}
