@@ -7,5 +7,11 @@ from .models import Post
 
 # Create your views here.
 def post_list(request):
-    posts = reversed(Post.objects.filter(fecha_creacion__lte=timezone.now()).order_by('fecha_creacion'))
+    if request.method == 'POST':
+    	print (request.POST.get('entrada'))
+    	posts = reversed(Post.objects.filter(titulo__contains=request.POST.get('entrada')))
+    else:	
+    	posts = reversed(Post.objects.filter(fecha_creacion__lte=timezone.now()).order_by('fecha_creacion'))
     return render(request, 'blog/post_list.html', {'posts': posts})
+
+
