@@ -10,6 +10,9 @@
     padding-right: 100px;
 
 }
+*my-container{
+    height: 100%;
+}
 
 .parent-container { /*Container Pincipal */
    padding-top: 50px;
