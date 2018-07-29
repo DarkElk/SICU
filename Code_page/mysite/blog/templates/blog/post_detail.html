@@ -10,6 +10,9 @@
         <h3>{{ post.autor }}</h3>
         <h4>{{ post.titulo }}</h4>
         <p>{{ post.descripcion|linebreaksbr }}</p>
-        <p><a href="{{ post.link|linebreaksbr }}">{{ post.link|linebreaksbr }}</a></p>
+        <div class="letras">
+          <p><a href="{{ post.link|linebreaksbr }}">{{ post.link|linebreaksbr }}</a></p>
+        </div>
+
     </div>
 {% endblock %}

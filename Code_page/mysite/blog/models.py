@@ -12,6 +12,7 @@ class Post(models.Model):
     descripcion = models.TextField()
     link = models.TextField()
     fecha_creacion = models.DateTimeField(default = timezone.now)
+    autor_Post = models.TextField()
 
     def __str__(self):
         return self.titulo

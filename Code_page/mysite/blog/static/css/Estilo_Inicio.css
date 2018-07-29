@@ -10,6 +10,12 @@
     padding-right: 100px;
 
 }
+.boton_atras{ /*Estilo Boton a perfil*/
+    float: left;
+    padding-top: 15px;
+    padding-left: 100px;
+
+}
 *my-container{
     height: 100%;
 }
@@ -24,13 +30,17 @@
 }
 
 .my-row{
-    border: 3px solid red;
+    border: 3px solid none;
     height: 1300px;
 }
 
 h2{text-align: center}
 h3{text-align:left;}
 h4{text-align: center}
+a:letras{
+  font-size: 11px;
+  color: black;
+}
 
 .date { /*Fecha Post*/
    float: right;
@@ -39,4 +49,8 @@ h4{text-align: center}
 
 .post { /*Css posteo*/
    margin-bottom: 70px;
+}
+.letras{
+  font-size:20px;
+  color:#100;
 }
