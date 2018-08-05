@@ -55,8 +55,16 @@
 
                 <div class="col-2 my-col align-self-start" style="background-color: #fff8e1">
                     <h3>Tags:</h3>
-
-                    <h4>#Oppenheim</h4>
+                    <form class="form-inline" method="POST" action="#"> {% csrf_token %}<!--acionando el boton-->
+                        <!--taggggg-->
+                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag1" value="calculo">Calculo</button>
+                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag2" value="ada">Ada</button>
+                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag3" value="chester">Chester</button>
+                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag4" value="libro">Libro</button>
+                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag5" value="computacion grafica">Computacion Grafica</button>
+                    </form>
+                    
+                    <h4>#Oppenheim</h4> 
                     <h4>#Calculo</h4>
                     <h4>#Libro</h4>
                     <h4>#ADA</h4>

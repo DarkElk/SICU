@@ -13,7 +13,18 @@ from django.shortcuts import redirect
 # Create your views here.
 def post_list(request):
     if request.method == 'POST':
-    	posts = reversed(Post.objects.filter(titulo__contains=request.POST.get('entrada')))
+        if request.POST.get('tag1')=='calculo':
+          posts = reversed(Post.objects.filter(titulo__contains='calculo'))
+        elif request.POST.get('tag2')=='ada':
+          posts = reversed(Post.objects.filter(titulo__contains='ada'))
+        elif request.POST.get('tag3')=='chester':
+          posts = reversed(Post.objects.filter(titulo__contains='chester'))
+        elif request.POST.get('tag4')=='libro':
+          posts = reversed(Post.objects.filter(titulo__contains='libro'))
+        elif request.POST.get('tag5')=='computacion grafica':
+          posts = reversed(Post.objects.filter(titulo__contains='computacion grafica'))    
+        else:
+            posts = reversed(Post.objects.filter(titulo__contains=request.POST.get('entrada')))
     else:
     	posts = reversed(Post.objects.filter(fecha_creacion__lte=timezone.now()).order_by('fecha_creacion'))
     return render(request, 'blog/post_list.html', {'posts': posts})
