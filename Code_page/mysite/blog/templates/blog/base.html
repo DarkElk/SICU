@@ -27,7 +27,7 @@
         <nav class="navbar navbar-lg navbar-dark" style="background-color: #ffab00;">
             <a class="navbar-brand" onclick="goBack()" href="#">SICU</a><!--Link enlazado al logo-->
             <!--Barra de busqueda-->
-            <form class="form-inline" method="POST" action="#"> {% csrf_token %}<!--acionando el boton-->
+            <form class="form-inline" method="POST" action="/"> {% csrf_token %}<!--acionando el boton-->
                 <input class="form-control mr-sm-2" name="entrada" type="search" placeholder="Buscar" aria-label="Buscar">
                 <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
@@ -55,7 +55,7 @@
 
                 <div class="col-2 my-col align-self-start" style="background-color: #fff8e1">
                     <h3>Tags:</h3>
-                    <form class="form-inline" method="POST" action="#"> {% csrf_token %}<!--acionando el boton-->
+                    <form class="form-inline" method="POST" action="/"> {% csrf_token %}<!--acionando el boton-->
                         <!--taggggg-->
                         <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag1" value="calculo">Calculo</button>
                         <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag2" value="ada">Ada</button>
