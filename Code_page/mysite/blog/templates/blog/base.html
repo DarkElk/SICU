@@ -4,11 +4,12 @@
 
 <html>
     <head>
-        <!--<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">-->
-        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
-        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+
         <link rel="stylesheet" href="../../static/css/Estilo_inicio.css">
         <!--<link rel="stylesheet" href="{% static 'css/blog.css' %}">-->
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><!--Ajuste de tamaño-->
@@ -19,30 +20,40 @@
     </head>
     <body style="background-color:#fffde7;">
 
-      
       <div class="page-header">
                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 
         <!--Barra de navegaci0....on (NavBar)-->
         <nav class="navbar navbar-lg navbar-dark" style="background-color: #ffab00;">
-            <a class="navbar-brand" onclick="goBack()" href="#">SICU</a><!--Link enlazado al logo-->
+            <div class="Sicu_Inicio">
+                <a class="navbar-brand" onclick="goBack()" href="#">SICU</a><!--Link enlazado al logo-->
+            </div>
+
             <!--Barra de busqueda-->
-            <form class="form-inline" method="POST" action="/"> {% csrf_token %}<!--acionando el boton-->
+            <form class="form-inline" method="POST" action="#"> {% csrf_token %}<!--acionando el boton-->
                 <input class="form-control mr-sm-2" name="entrada" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                <button class="btn btn-dark btn-outline-primary my-2 my-sm-0" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
             </form>
 
             <!--Botones de Barra navegacion-->
             <div class="btn-group" role="group"><!--arialabel-->
-                <button type="button" class="btn btn-secondary">Inicio Sesión</button>
-                <button type="button" class="btn btn-secondary">Registrarse</button>
+                <button type="button" class="btn btn-default">
+                    <i class="fas fa-sign-in-alt"></i> Inicio Sesión
+                </button>
+                <button type="button" class="btn btn-default">
+                    Registrarse <i class="fas fa-user-plus"></i>
+                </button>
             </div>
 
         </nav>
 
         <div class="container-perfil">
             <div class="boton-perfil"><!--Boton perfil-->
-                <button type="button" class="btn btn-secundary">Perfil</button>
+                <button type="button" class="btn btn-secundary btn-lg">
+                    <i class="fas fa-user-circle"></i> Perfil
+                </button>
 
             </div>
         </div>
@@ -53,23 +64,34 @@
 
             <div class="row my-row justify-content-around"><!--Columnas-->
 
-                <div class="col-2 my-col align-self-start" style="background-color: #fff8e1">
-                    <h3>Tags:</h3>
+                <div class="col-2 my-col align-self-start" >
+
+                    <div class="boton-SubirPost">
+                        <button type="button " class="btn btn-warning btn-lg" onclick="window.location='http://127.0.0.1:8000/post/new/';">
+                            <i class="fas fa-cloud-upload-alt"></i> Compartir Post
+                        </button>
+                    </div>
+
                     <form class="form-inline" method="POST" action="/"> {% csrf_token %}<!--acionando el boton-->
-                        <!--taggggg-->
-                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag1" value="calculo">Calculo</button>
-                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag2" value="ada">Ada</button>
-                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag3" value="chester">Chester</button>
-                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag4" value="libro">Libro</button>
-                        <button class="btn btn-dark btn-outline-success my-2 my-sm-0" type="submit" name="tag5" value="computacion grafica">Computacion Grafica</button>
+
+                        <div class="Tag">
+
+                            <!--taggggg-->
+                            <button class="btn btn-dark btn-outline-primary my-2 my-sm-0" type="submit" name="tag1" value="calculo">Calculo</button>
+                            <button class="btn btn-dark btn-outline-primary my-2 my-sm-0" type="submit" name="tag2" value="ada">Ada</button>
+                            <button class="btn btn-dark btn-outline-primary my-2 my-sm-0" type="submit" name="tag3" value="chester">Chester</button>
+                            <button class="btn btn-dark btn-outline-primary my-2 my-sm-0" type="submit" name="tag4" value="libro">Libro</button>
+                            <button class="btn btn-dark btn-outline-primary my-2 my-sm-0" type="submit" name="tag5" value="computacion grafica">Computacion Grafica</button>
+                        </div>
+
                     </form>
-                    
-                    <h4>#Oppenheim</h4> 
+                    <!--
+                    <h4>#Oppenheim</h4>
                     <h4>#Calculo</h4>
                     <h4>#Libro</h4>
                     <h4>#ADA</h4>
                     <h4>#Clases</h4>
-
+                    -->
                 </div>
 
                 <div class="col-6 my-col" style="background-color: #fff8e1">
@@ -78,9 +100,11 @@
 
                 </div>
 
-                <div class="col-2 my-col align-self-start" style="background-color: #fff8e1">
+                <div class="col-2 my-col align-self-start" style="background-color: #fffde7">
 
-                    <h3>Publicidad</h3>
+                    <div class="logo_wash">
+                        <img src="../../static/img/wash.png" alt="Wash">
+                    </div>
 
                 </div>
 
@@ -89,7 +113,7 @@
         </div>
 
         <script src="../../static/js/jquery-3.1.1.min.js"></script>
-        <script src="../../static/js/hola.js"></script>
+        <script src="../../static/js/main.js"></script>
         <script src="../../static/js/popper.min.js"></script>
         <script src="../../static/js/bootstrap.min.js"></script>
 

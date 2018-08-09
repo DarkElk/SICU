@@ -54,3 +54,17 @@ a:letras{
   font-size:20px;
   color:#100;
 }
+
+.Tag{
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+.logo_wash{
+    height: 200px;
+    width: 200px;
+}
+
+.Sicu_Inicio{
+    font-style: oblique: ;
+}
