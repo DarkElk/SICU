@@ -7,10 +7,10 @@ from django.utils.encoding import python_2_unicode_compatible
 # models.Model significa que Post es un modelo de Django, así Django sabe que debe guardarlo en la base de datos.
 @python_2_unicode_compatible
 class Post(models.Model):
-    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    autor = models.CharField(max_length=100)
     titulo = models.CharField(max_length=100)
     descripcion = models.TextField()
-    link = models.TextField()
+    link = models.CharField(max_length=400)
     fecha_creacion = models.DateTimeField(default = timezone.now)
     #autor_Post = models.CharField(default = 'Camaleon anónimo' ,max_length = 20)
 
