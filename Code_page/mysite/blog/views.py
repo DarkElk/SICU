@@ -17,12 +17,12 @@ def post_list(request):
           posts = reversed(Post.objects.filter(titulo__contains='calculo'))
         elif request.POST.get('tag2')=='ada':
           posts = reversed(Post.objects.filter(titulo__contains='ada'))
-        elif request.POST.get('tag3')=='chester':
-          posts = reversed(Post.objects.filter(titulo__contains='chester'))
+        elif request.POST.get('tag3')=='estadistica':
+          posts = reversed(Post.objects.filter(titulo__contains='estadistica'))
         elif request.POST.get('tag4')=='libro':
           posts = reversed(Post.objects.filter(titulo__contains='libro'))
         elif request.POST.get('tag5')=='computacion grafica':
-          posts = reversed(Post.objects.filter(titulo__contains='computacion grafica'))    
+          posts = reversed(Post.objects.filter(titulo__contains='computacion grafica'))
         else:
             posts = reversed(Post.objects.filter(titulo__contains=request.POST.get('entrada')))
     else:
